@@ -1,0 +1,100 @@
+<div class="container">
+    <h1>Validation Form</h1>
+    <form role="form" [formGroup]="submitForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="form-group col-lg-12">
+                <label for="name">Name<span style="color:red;">*</span></label>
+                <input type="text" class="form-control" formControlName="name" [ngClass]="{'is-invalid':submitted && submitForm.controls.name.errors}" />
+            </div>
+            <div *ngIf ="submitted && submitForm.controls.name.errors" class="text-danger">
+                <div *ngIf ="submitted && submitForm.controls.name.errors.required">
+                    Please inform your name
+                </div>
+            </div>
+        </div><br/>
+        <div class="row">
+            <div class="form-group col-lg-12 ">
+                <label for="email">Email<span style="color:red;">*</span></label>
+                <input type="email" class="form-control input-normal" formControlName="email" [ngClass]="{'is-invalid':submitted && submitForm.controls.email.errors}" />
+            </div>
+            <div *ngIf ="submitted && submitForm.controls.name.errors" class="text-danger">
+                <div *ngIf ="submitted && submitForm.controls.name.errors.required">
+                    Please inform your email
+                </div>
+            </div>
+        </div><br/>
+        <div class="row">
+            <div class="form-group col-lg-6 ">
+                <label for="address">Address<span style="color:red;">*</span></label>
+                <input type="text" class="form-control input-normal" formControlName="address" [ngClass]="{'is-invalid':submitted && submitForm.controls.address.errors}" />
+
+                <div *ngIf ="submitted && submitForm.controls.address.errors" class="text-danger">
+                    <div *ngIf ="submitted && submitForm.controls.address.errors.required">
+                        Please inform your address
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="form-group col-lg-3 ">
+                <label for="address2">Address 2</label>
+                <input type="text" class="form-control input-normal" /><br/>
+            </div>
+
+            <div class="form-group col-lg-3 ">
+                <label for="zipcode">Zip Code<span style="color:red;">*</span></label>
+                <input type="number" class="form-control input-normal" formControlName="zipCode" [ngClass]="{'is-invalid':submitted && submitForm.controls.zipCode.errors}" />
+                
+                <div *ngIf ="submitted && submitForm.controls.zipCode.errors" class="text-danger">
+                    <div *ngIf ="submitted && submitForm.controls.zipCode.errors.required">
+                        Please inform your zipCode
+                    </div>
+                </div>
+            </div>
+
+        </div><br/>
+        <div class="row">
+            <div class="form-group col-lg-4 ">
+                <label for="city">City<span style="color:red;">*</span></label>
+                <input type="text" class="form-control input-normal" formControlName="city" [ngClass]="{'is-invalid':submitted && submitForm.controls.city.errors}" />
+
+                <div *ngIf ="submitted && submitForm.controls.city.errors" class="text-danger">
+                    <div *ngIf ="submitted && submitForm.controls.city.errors.required">
+                        Please inform your city
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-lg-4 ">
+                <label for="state">State/Province/Region<span style="color:red;">*</span></label>
+                <input type="text" class="form-control input-normal" formControlName="state" [ngClass]="{'is-invalid':submitted && submitForm.controls.state.errors}" />
+
+                <div *ngIf ="submitted && submitForm.controls.state.errors" class="text-danger">
+                    <div *ngIf ="submitted && submitForm.controls.state.errors.required">
+                        Please inform your state
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-lg-4 ">
+                <label for="country">Country<span style="color:red;">*</span></label>
+                <input type="text" class="form-control input-normal" formControlName="country" [ngClass]="{'is-invalid':submitted && submitForm.controls.country.errors}" />
+
+                <div *ngIf ="submitted && submitForm.controls.country.errors" class="text-danger">
+                    <div *ngIf ="submitted && submitForm.controls.country.errors.required">
+                        Please inform your country
+                    </div>
+                </div>
+            </div>
+
+        </div><br/>
+        
+        <div class="row">
+            <div class="form-group col-lg-4">
+                <button type="submit" class="btn btn-primary" >Submit</button>&nbsp;
+                <button type="reset" class="btn btn-secondary " >Reset</button>
+                
+            </div>
+        </div>
+    </form>
+</div>

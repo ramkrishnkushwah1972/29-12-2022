@@ -1,0 +1,49 @@
+<div class="container">
+    <h1>Customer Information</h1>
+    
+    <form role="form" (ngSubmit)="doSubmitFrom()">
+        <div class="row">
+            <div class="form-group col-lg-4">
+                <label for="companyname">Company Name</label>
+                <input type="text" name="companyname"[(ngModel)]="data.companyname" class="form-control" /><br/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-lg-4 ">
+                <label for="email">Email</label>
+                <input type="text" name="email" [(ngModel)]="data.email" class="form-control input-normal" /><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-4 ">
+                <label for="phone">Phone Number</label>
+                <input type="number" name="phone" [(ngModel)]="data.phone" class="form-control input-normal" /><br/>
+            </div>
+        </div>
+        <div class="row">
+            <h1>Machines</h1>
+            <div class="form-group col-lg-2 ">
+                <label for="machine">Machine type</label>
+                <select class="form-control form-select" name="machines" [(ngModel)]="data.machines">
+                    <option value="">Select type</option>
+                    <option value="Scissor Lift">Scissor Lift</option>
+                    <option value="Telehandler">Telehandler</option>
+                    <option value="Transporter">Transporter</option>
+                </select>
+            </div>
+            <div class="form-group col-lg-2 ">
+                <label for="amount">Amount</label>
+                <input type="number" name="amount" [(ngModel)]="data.amount" class="form-control input-normal" />
+                <span style="color: red;">Delete</span><br/>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="form-group col-lg-4 ">
+                <button type="submit" class="btn btn-primary" (click)="getVal()" >Place order</button>
+            </div>
+        </div>
+    </form>
+
+</div>
